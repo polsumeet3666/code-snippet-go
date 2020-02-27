@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Contact Us</h2>
+    {{if .Success}}
+    <h3>Thanks !!</h3>
+    {{else}}
+
+
+    <form method="POST">
+        <label for="email"> Email:</label><br>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="subject">Subject:</label> <br>
+        <input type="text" name="subject" id="subject"><br>
+
+
+        <label for="message">Message :</label><br>
+        <input type="textarea" name="message" id="message"><br>
+
+        <input type="submit" value="submit"><br>
+
+    </form>
+    {{end}}
+</body>
+
+</html>
