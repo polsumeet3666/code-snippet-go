@@ -16,11 +16,16 @@ func main() {
 
 	// custom handlerFunc to handle segments/ dynamic parameters
 	router.HandleFunc("/books/{title}/page/{page}", func(w http.ResponseWriter, r *http.Request) {
+		
+		
+		
 		// get url variables
 		vars := mux.Vars(r)
-
+		fmt.Println(vars)
+		
 		title := vars["title"]
 		page := vars["page"]
+		fmt.Println(title,page)
 		fmt.Fprintf(w, " you have request book : %v and page : %v", title, page)
 	})
 

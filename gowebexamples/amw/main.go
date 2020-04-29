@@ -20,6 +20,7 @@ func Logging() Middleware {
 		// define handlerfunc here
 		return func(w http.ResponseWriter, r *http.Request) {
 			// do middleware things
+			log.Println("logging mw")
 			start := time.Now()
 			defer func() { log.Println(r.URL.Path, time.Since(start)) }()
 
@@ -38,6 +39,7 @@ func Method(m string) Middleware {
 		// define handler here
 		return func(w http.ResponseWriter, r *http.Request) {
 			// do middleware things here
+			log.Println("method mw")
 			if r.Method != m {
 				http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 				return
